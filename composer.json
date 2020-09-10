@@ -1,0 +1,53 @@
+{
+  "name": "cherrypulp/laravel-actito",
+  "description": "A laravel actito",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "actito"
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "name": "",
+      "email": ""
+    }
+  ],
+  "require": {
+    "php": ">=7.1.6"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "Cherrypulp\\LaravelActito\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cherrypulp\\LaravelActito\\Tests\\": "tests"
+    },
+    "files": [
+      "vendor/phpunit/phpunit/src/Framework/Assert/Functions.php"
+    ]
+  },
+  "scripts": {
+    "phpunit": "phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Cherrypulp\\LaravelActito\\ServiceProvider"
+      ],
+      "aliases": {
+        "Actito": "Actito"
+      }
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
