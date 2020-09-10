@@ -10,6 +10,7 @@ Actito API client for Laravel
 ## Installation
 
 Install via composer
+
 ```bash
 composer require cherrypulp/laravel-actito
 ```
@@ -27,6 +28,7 @@ Cherrypulp\LaravelActito\ServiceProvider::class,
 ### Register Facade
 
 Register package facade in `config/app.php` in `aliases` section
+
 ```php
 'Actito' => Cherrypulp\LaravelActito\Facades\LaravelActito::class,
 ```
@@ -41,17 +43,23 @@ php artisan vendor:publish --provider="Cherrypulp\LaravelActito\ServiceProvider"
 
 Simply call :
 
+```php
 Actito::get('entities', $options)
 Actito::post('xxx', $options)
 Actito::delete('xxx', $options)
 Actito::put('xxx', $options)
+```
+or
 
-or Actito::request('xxx')
+```php
+Actito::request('xxx')
+```
 
 ### Update or create a profile
 
 There is an helper to update or create a profile :
 
+```php
 $actito->updateOrCreate('xxx', 'Users', [
     "attributes" => [
         'birthDate' => date('Y-m-d', strtotime($user->birthday)),
@@ -78,9 +86,11 @@ $actito->updateOrCreate('xxx', 'Users', [
         "Retargeting" => true,
     ],
 ]);
+``
 
 ### Update or create a custom table :
 
+```php
 $actito->updateOrCreateCustomTable('xxx', 'Charges', [
     "properties" => [
         'charge_id' => $charge->id,
@@ -90,16 +100,17 @@ $actito->updateOrCreateCustomTable('xxx', 'Charges', [
         'stripe_id' => $charge->stripe_id,
     ],
 ]);
+```
 
 ### Access to the GuzzleClient
 
 The request method is based on Guzzle for more information you can have a look here :
 
-````php
+```php
 app('laravel-actito')->client
 ```
 
-http://docs.guzzlephp.org/en/stable/request-options.html
+[http://docs.guzzlephp.org/en/stable/request-options.html](http://docs.guzzlephp.org/en/stable/request-options.html)
 
 The Client is based on Guzzle. For more information
 
